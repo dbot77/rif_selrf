@@ -1,3 +1,1 @@
-# rif_selrf
-
-This is the Read Me file.
+UI automation scripts for Selenium with Robot Framework.
