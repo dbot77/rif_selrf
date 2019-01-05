@@ -9,7 +9,7 @@ Supported desktop browsers: Chrome, Firefox and Safari
 #### Keywords:
 - Default Selenium and Robot Framework keywords are in format "My Keyword ABC" (first letter uppercase, all other letters lowercase, spaces between words)
 - Custom keywords are in format "my_keyword_xyz" (all lowercase with underscores, no spaces)
-- Upper/lowercase and space/underscore names are interpreted as the same keyword which will cause errors. Ex. "My Keyword" is the same as "my_keyword" (will cause error if you have both in your scripts)
+- Upper/lowercase and space/underscore names are interpreted as the same keyword. Ex. "My Keyword" is the same as "my_keyword" (will cause error if you have both in your scripts)
 
 #### Variables:
 - Variable format is "my_variable" (all lowercase with underscores, no spaces)
