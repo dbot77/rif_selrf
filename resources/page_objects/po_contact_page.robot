@@ -2,7 +2,7 @@
 Documentation    Contact Page class
 
 *** Variables ***
-${var_contact_page_path}=    contact/
+${var_contact_page_path}=    /contact/
 
 # Form elements
 ${loc_contform_container}=    css=div.wpforms-container

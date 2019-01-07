@@ -3,7 +3,7 @@ Documentation    Home Page class
 
 
 *** Variables ***
-${var_home_page_path}=    ${EMPTY}
+${var_home_page_path}=    /
 
 # Robot Spotlight widget
 ${loc_hp_splt_widget_feat_box_title_name_link}=    css=.feat-box.spotlight .title-name a

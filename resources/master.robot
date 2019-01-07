@@ -28,7 +28,7 @@ ${browser}      chrome
 ${sel_speed}    .7
 
 ### DOMAIN URLS ###
-${domain}       https://blackbird77.com/wp/    # Staging is default. Ok to alter (Ex. -v domain:https://robotsinfilm.com/)
+${domain}       https://blackbird77.com/wp    # Staging is default. Ok to alter (Ex. -v domain:https://robotsinfilm.com)
 
 ### TEST USERS ### (Do not alter)
 ${test_subscriber_username}    SubTestUser
@@ -58,6 +58,7 @@ default_suite_teardown
 # UTILITY KEYWORDS
 construct_full_url
     [Arguments]    ${path}=${EMPTY}
+    ${domain}=    Set Variable If    '${domain}'=="https://blackbird77.com"    https://blackbird77.com/wp    ${domain}    # set full stg domain
     ${full_url}=    Catenate    SEPARATOR=    ${domain}    ${path}
     Set Test Variable    ${full_url}
 
