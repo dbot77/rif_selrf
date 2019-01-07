@@ -3,7 +3,7 @@ Documentation    Lost Password Page class
 
 
 *** Variables ***
-${var_lostpw_page_path}=    wp-login.php?action=lostpassword
+${var_lostpw_page_path}=    /wp-login.php?action=lostpassword
 ${loc_lostpwform_user_field}=    id=user_login
 ${loc_lostpwform_get_new_pw_btn}=    css=input[value="Get New Password"]
 ${loc_lostpwform_error_msg_text}=    id=login_error
