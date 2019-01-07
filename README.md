@@ -14,6 +14,6 @@ Supported desktop browsers: Chrome, Firefox and Safari (OSX)
 #### Variables:
 - Variable format is "my_variable" (all lowercase with underscores, no spaces)
 - If a variable is for an element locator, "loc_" should be prepended to the variable name
-- If a variable is for a page's path ("/wp/contact/"), the variable name should be in format "x_page_path" ("contact_page_path").
+- If a variable is for a page's path ("/contact/"), the variable name should be in format "x_page_path" ("contact_page_path").
 
 
