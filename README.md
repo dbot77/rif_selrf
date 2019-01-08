@@ -2,14 +2,15 @@
 
 Supported desktop browsers: Chrome, Firefox and Safari (OSX)
 
-#### File Structure:
+#### General:
 - All Setup and Utility settings, variables and keywords are contained in file master.robot. This file may eventually be broken into smaller files if/when it gets too large.
 - New page or component object classes need to be added to the Resource list in master.robot. 
 
 #### Keywords:
 - Native Selenium and Robot Framework keywords are in format "My Keyword ABC" (first letter uppercase, all other letters lowercase, spaces between words)
 - Custom keywords are in format "my_keyword_xyz" (all lowercase with underscores, no spaces)
-- Upper/lowercase and space/underscore names are interpreted as the same keyword ("My Keyword" is same as "my_keyword") so do not duplicate in this manner. It will cause an error in your script.
+- You will only be creating **Custom** keywords.
+- Upper/lowercase and space/underscore names are interpreted as the same keyword ("My Keyword" is same as "my_keyword") so do not duplicate any of the Native keywords in this manner. It will cause an error in your script.
 
 #### Variables:
 - Variable format is "my_variable" (all lowercase with underscores, no spaces)
