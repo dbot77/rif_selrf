@@ -7,11 +7,16 @@ Test Teardown     default_test_teardown
 Suite Teardown    default_suite_teardown
 Force Tags        desktop    lost_pw
 
-# PreCond: User is logged out & Clear cookies/cache
 
 *** Test Cases ***
 lostpw_page_submit_valid_email_happy_path
     [Tags]    smoke
+    [Documentation]
+    ...    PreCond: Clean browser (cleared cookies/cache) and User is logged out
+    ...    1. Go to Lost Password Page
+    ...    2. Enter valid Subscriber user email and submit
+    ...    ER: User is directed to Lost PW Confirmation Page and confirmation message is displayed
+
     # 1. Go to Lost Password Page
     go_to_url    ${var_lostpw_page_path}
 
@@ -26,10 +31,16 @@ lostpw_page_submit_valid_email_happy_path
 
 
 lostpw_page_submit_empty_email
+    [Documentation]
+    ...    PreCond: Clean browser (cleared cookies/cache) and User is logged out
+    ...    1. Go to Lost Password Page
+    ...    2. Leave all fields empty and submit
+    ...    ER: User remains on Lost Password Page and empty-input error message displays
+
     # 1. Go to Lost Password Page
     go_to_url    ${var_lostpw_page_path}
 
-    # 2. Submit (Email field empty)
+    # 2. Submit form
     wait_then_click_button    ${loc_lostpwform_get_new_pw_btn}
 
     # ER: User remains on Lost Password Page and error message displays
@@ -38,10 +49,16 @@ lostpw_page_submit_empty_email
 
 
 lostpw_page_submit_notfound_email
+    [Documentation]
+    ...    PreCond: Clean browser (cleared cookies/cache) and User is logged out
+    ...    1. Go to Lost Password Page
+    ...    2. Input not-found email (that does not exist in user table) and submit
+    ...    ER: User remains on Lost Password Page and not-found error message displays
+
     # 1. Go to Lost Password Page
     go_to_url    ${var_lostpw_page_path}
 
-    # 2. Input email that does not exist in user table and submit
+    # 2. Input not-found email and submit
     lostpwform_input_text_in_email_field    notfound@robotsinfilm.com
     wait_then_click_button    ${loc_lostpwform_get_new_pw_btn}
 

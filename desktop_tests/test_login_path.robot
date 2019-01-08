@@ -7,11 +7,16 @@ Test Teardown     default_test_teardown
 Suite Teardown    default_suite_teardown
 Force Tags        desktop    login
 
-# PreCond: User is logged out
 
 *** Test Cases ***
 login_path_login_valid_creds_subscriber_happy_path
     [Tags]    smoke
+    [Documentation]
+    ...    PreCond: Clean browser (cleared cookies/cache) and User is logged out
+    ...    1. Go to Login Page
+    ...    2. Enter valid Subscriber un/pw and submit
+    ...    ER: User redirected to Profile Page and correct username is displayed
+
     # 1. Go to Login Page
     go_to_url    ${var_login_page_path}
 
@@ -25,10 +30,16 @@ login_path_login_valid_creds_subscriber_happy_path
     profile_page_username_field_displays_correct_user    ${test_subscriber_username}
 
 login_page_login_empty_creds
+    [Documentation]
+    ...    PreCond: Clean browser (cleared cookies/cache) and User is logged out
+    ...    1. Go to Login Page
+    ...    2. Leave all fields empty and submit
+    ...    ER: User remains on Login Page and un/pw fields are empty
+
     # 1. Go to Login Page
     go_to_url    ${var_login_page_path}
 
-    # 2. Leave empty un/pw and submit
+    # 2. Submit form
     lgnform_click_login_button
 
     # ER: User remains on Login Page and un/pw fields are empty
@@ -37,6 +48,12 @@ login_page_login_empty_creds
     lgnform_pw_field_displays_text   ${EMPTY}
 
 login_page_login_invalid_pw_creds
+    [Documentation]
+    ...    PreCond: Clean browser (cleared cookies/cache) and User is logged out
+    ...    1. Go to Login Page
+    ...    2. Enter valid un and invalid pw and submit
+    ...    ER: User remains on Login Page and invalid un/pw msg is displayed
+
     # 1. Go to Login Page
     go_to_url    ${var_login_page_path}
 
