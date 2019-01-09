@@ -58,14 +58,14 @@ default_suite_teardown
 # UTILITY KEYWORDS
 construct_full_url
     [Arguments]    ${path}=${EMPTY}
-    ${domain}=    Set Variable If    '${domain}'=="https://blackbird77.com"    https://blackbird77.com/wp    ${domain}    # set full stg domain
+    ${domain}=    Set Variable If    '${domain}'=="https://blackbird77.com"    https://blackbird77.com/wp    ${domain}    # if stg, set full stg domain
     ${full_url}=    Catenate    SEPARATOR=    ${domain}    ${path}
-    Set Test Variable    ${full_url}
+    [return]    ${full_url}
 
 
 go_to_url
     [Arguments]    ${path}=${EMPTY}
-    construct_full_url    ${path}
+    ${full_url}=    construct_full_url    ${path}
     Go To    ${full_url}
     Location Should Be    ${full_url}
 
