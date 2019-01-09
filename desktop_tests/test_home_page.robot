@@ -35,7 +35,7 @@ hp_splt_widget_click_links_verify_landing_page
     Should Contain    ${titlepg_title_name}    ${hp_title_name}
 
     # 3. Go to the Home Page
-    go_to_url    ${var_home_page_path}
+    go_to_url    ${path_home_page}
 
     # 4a. In the Spotlight widget, save the View All link text
     ${view_all_text}=    hp_splt_widget_viewall_box_get_view_all_link_text

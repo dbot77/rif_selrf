@@ -18,7 +18,7 @@ lostpw_page_submit_valid_email_happy_path
     ...    ER: User is directed to Lost PW Confirmation Page and confirmation message is displayed
 
     # 1. Go to Lost Password Page
-    go_to_url    ${var_lostpw_page_path}
+    go_to_url    ${path_lostpw_page}
 
     # 2. Enter valid Subscriber email and submit
     lostpwform_input_text_in_email_field    ${test_subscriber_email}
@@ -27,7 +27,7 @@ lostpw_page_submit_valid_email_happy_path
     # ER: User is directed to Lost PW Confirmation Page and confirmation message is displayed
     Wait Until Page Does Not Contain Element    ${loc_lostpwform_get_new_pw_btn}
     lostpw_conf_page_displays_confirm_msg
-    Location Should Contain    ${var_lostpw_conf_page_path}
+    Location Should Contain    ${path_lostpw_conf_page}
 
 
 lostpw_page_submit_empty_email
@@ -38,13 +38,13 @@ lostpw_page_submit_empty_email
     ...    ER: User remains on Lost Password Page and empty-input error message displays
 
     # 1. Go to Lost Password Page
-    go_to_url    ${var_lostpw_page_path}
+    go_to_url    ${path_lostpw_page}
 
     # 2. Submit form
     wait_then_click_button    ${loc_lostpwform_get_new_pw_btn}
 
     # ER: User remains on Lost Password Page and error message displays
-    Location Should Contain   ${var_lostpw_page_path}
+    Location Should Contain   ${path_lostpw_page}
     lostpwform_error_msg_text_is_displayed    ${var_lostpwform_empty_input_error_msg_text}
 
 
@@ -56,12 +56,12 @@ lostpw_page_submit_notfound_email
     ...    ER: User remains on Lost Password Page and not-found error message displays
 
     # 1. Go to Lost Password Page
-    go_to_url    ${var_lostpw_page_path}
+    go_to_url    ${path_lostpw_page}
 
     # 2. Input not-found email and submit
     lostpwform_input_text_in_email_field    notfound@robotsinfilm.com
     wait_then_click_button    ${loc_lostpwform_get_new_pw_btn}
 
     # ER: User remains on Lost Password Page and error message displays
-    Location Should Contain   ${var_lostpw_page_path}
+    Location Should Contain   ${path_lostpw_page}
     lostpwform_error_msg_text_is_displayed    ${var_lostpwform_notfound_input_error_msg_text}

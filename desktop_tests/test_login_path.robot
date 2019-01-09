@@ -18,7 +18,7 @@ login_path_login_valid_creds_subscriber_happy_path
     ...    ER: User redirected to Profile Page and correct username is displayed
 
     # 1. Go to Login Page
-    go_to_url    ${var_login_page_path}
+    go_to_url    ${path_login_page}
 
     # 2. Enter valid Subscriber un/pw and submit
     lgnform_input_text_in_user_field    ${test_subscriber_username}
@@ -37,13 +37,13 @@ login_page_login_empty_creds
     ...    ER: User remains on Login Page and un/pw fields are empty
 
     # 1. Go to Login Page
-    go_to_url    ${var_login_page_path}
+    go_to_url    ${path_login_page}
 
     # 2. Submit form
     lgnform_click_login_button
 
     # ER: User remains on Login Page and un/pw fields are empty
-    Location Should Contain    ${var_login_page_path}
+    Location Should Contain    ${path_login_page}
     lgnform_user_field_displays_text   ${EMPTY}
     lgnform_pw_field_displays_text   ${EMPTY}
 
@@ -55,7 +55,7 @@ login_page_login_invalid_pw_creds
     ...    ER: User remains on Login Page and invalid un/pw msg is displayed
 
     # 1. Go to Login Page
-    go_to_url    ${var_login_page_path}
+    go_to_url    ${path_login_page}
 
     # 2. Enter valid un and invalid pw and submit
     lgnform_input_text_in_user_field    ${test_subscriber_username}
@@ -63,5 +63,5 @@ login_page_login_invalid_pw_creds
     lgnform_click_login_button
 
     # ER: User remains on Login Page and error msg is displayed
-    Location Should Contain    ${var_login_page_path}
+    Location Should Contain    ${path_login_page}
     lgnform_invalid_unpw_error_msg_is_displayed

@@ -24,16 +24,16 @@ Resource          page_objects/po_title_page.robot
 *** Variables ***
 
 ### SELENIUM SETTINGS ###
-${browser}      chrome
-${sel_speed}    .7
+${browser}=      chrome
+${sel_speed}=    .7
 
 ### DOMAIN URLS ###
-${domain}       https://blackbird77.com/wp    # Staging is default. Ok to alter (Ex. -v domain:https://robotsinfilm.com)
+${domain}=       https://blackbird77.com/wp    # Staging is default. Ok to alter (Ex. -v domain:https://robotsinfilm.com)
 
 ### TEST USERS ### (Do not alter)
-${test_subscriber_username}    SubTestUser
-${test_subscriber_password}    k0AkmbDeMQFKFwF9
-${test_subscriber_email}       robotsinfilm+subtestuser@gmail.com
+${test_subscriber_username}=    SubTestUser
+${test_subscriber_password}=    k0AkmbDeMQFKFwF9
+${test_subscriber_email}=       robotsinfilm+subtestuser@gmail.com
 
 ### UTILITY VARS ###
 ${loc_h1}=    css=h1
