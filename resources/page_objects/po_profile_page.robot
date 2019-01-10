@@ -3,7 +3,7 @@ Documentation    Profile Page class
 
 
 *** Variables ***
-${var_prof_page_path}=    /wp-admin/profile.php
+${path_prof_page}=    /wp-admin/profile.php
 ${loc_prof_page_username_field}=    id=user_login
 
 

@@ -17,7 +17,7 @@ lib_pg_bycat_wgt_click_links_verify_landing_page
     ...    ER: The user is directed to the correct landing page
 
     loop_thru_links_verify_landing_page
-    ...    ${var_lib_page_path}
+    ...    ${path_lib_page}
     ...    3
     ...    ${loc_bycat_wgt_link_pt1}
     ...    ${loc_bycat_wgt_link_pt2}

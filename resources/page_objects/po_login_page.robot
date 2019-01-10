@@ -2,7 +2,7 @@
 Documentation    Login Page class
 
 *** Variables ***
-${var_login_page_path}=    /wp-login.php
+${path_login_page}=    /wp-login.php
 
 # Form elements
 ${loc_lgnform_user_field}=    id=user_login

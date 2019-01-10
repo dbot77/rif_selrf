@@ -2,7 +2,7 @@
 Documentation    Contact Page class
 
 *** Variables ***
-${var_contact_page_path}=    /contact/
+${path_contact_page}=    /contact/
 
 # Form elements
 ${loc_contform_container}=    css=div.wpforms-container
@@ -12,9 +12,9 @@ ${loc_contform_submit_btn}=    ${loc_contform_container}    .wpforms-submit
 
 # Notification messages
 ${loc_contform_req_field_error_msg}=    css=label.wpforms-error
-${contform_req_field_error_msg}=    This field is required.
+${var_contform_req_field_error_msg}=    This field is required.
 ${loc_contform_conf_msg}=    css=.wpforms-confirmation-container-full p
-${contform_conf_msg}=    Your message has been sent. Thank you!
+${var_contform_conf_msg}=    Your message has been sent. Thank you!
 
 
 *** Keywords ***

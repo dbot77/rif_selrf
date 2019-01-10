@@ -69,11 +69,11 @@ srch_path_srch_rslt_pg_submit_search_no_results
     ...    ER: User is directed to Search Results Page and no results message displays
 
     # 1. Go to Search Results Page with Search widget displayed
-    go_to_url    ${srch_rslt_page_path_displays_srch_wgt}
+    go_to_url    ${path_srch_rslt_page_displays_srch_wgt}
 
     # 2. Search widget: Submit a search term that wil not return any results
     srch_wgt_input_text_and_submit    ${loc_srch_wgt_text_box_srch_rslt_pg}    ${loc_srch_wgt_submit_btn_srch_rslt_pg}    wxyz
 
     # ER: User directed to Search Results Page and no results message displays
     ${act_text}=    Get Text    ${loc_srch_rslt_no_result_msg_text}
-    Should Be Equal As Strings    ${act_text}    ${srch_rslt_no_result_msg_text}
+    Should Be Equal As Strings    ${act_text}    ${var_srch_rslt_no_result_msg_text}

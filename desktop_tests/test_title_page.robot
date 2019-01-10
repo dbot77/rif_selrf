@@ -18,7 +18,7 @@ title_pg_title_details_are_displayed
     ...    ER: Verify each element has content (not empty)
 
     # 1. Go to a title page
-    go_to_url    ${var_title_page_path}
+    go_to_url    ${path_title_page}
 
     # 2a. Get the text from each of the title details elements and save to list
     @{list_elements_text}=    Create List
