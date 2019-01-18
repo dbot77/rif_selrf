@@ -111,6 +111,17 @@ get_element_text_and_compare_to_exp_text
 
 
 loop_thru_links_verify_landing_page
+    [Documentation]
+    ...    This keyword is used for when a group of links are displayed as list items <li>
+    ...    The locator for the links must be in nth-child format (so we can loop through the links the list) and
+    ...    must be divided into two parts (pre index and post index). The index will be handled via the i variable in the loop
+    ...    Arguments:
+    ...    start_url: the page you want to run the test on (Home Page is default)
+    ...    range: how many links you expect to be in the group of links
+    ...    loc_link_pt1: The first half of the locator
+    ...    loc_link_pt2: the second half of the locator
+    ...    action: the type of comparison to verify the landing page is correct (either "equals" or "contains")
+
     [Arguments]    ${start_url}    ${range}    ${loc_link_pt1}    ${loc_link_pt2}    ${action}
 
     # LOOP through all links within the range and take actions on each
