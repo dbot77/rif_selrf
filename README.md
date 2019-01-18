@@ -1,6 +1,20 @@
 ## UI desktop automation scripts for Selenium with Robot Framework.
 
-Supported desktop browsers: Chrome, Firefox and Safari (OSX)
+Supported desktop browsers (OSX): Chrome, Firefox and Safari
+
+#### Running tests in Terminal:
+
+If browser or domain value is not submitted, the tests will run by default on the Staging environment in Chrome. For example:
+
+- robot -L debug desktop_tests
+
+To alter the domain or browser, pass values to the "browser" or "domain" variables. For example:
+
+- robot -v browser:firefox -v domain:https://robotsinfilm.com -L debug desktop_tests
+
+Access to the Login/LostPW sections of the site are protected. To run all tests that are not in protected areas, use the "offsite" tag. For example:
+
+- robot -L debug -i offsite desktop_tests
 
 #### General:
 - All Setup and Utility settings, variables and keywords are contained in file master.robot. This file may eventually be broken into smaller files if/when it gets too large.
