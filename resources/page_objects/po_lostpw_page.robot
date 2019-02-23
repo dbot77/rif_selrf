@@ -8,7 +8,7 @@ ${loc_lostpwform_user_field}=    id=user_login
 ${loc_lostpwform_get_new_pw_btn}=    css=input[value="Get New Password"]
 ${loc_lostpwform_error_msg_text}=    id=login_error
 ${var_lostpwform_empty_input_error_msg_text}=    ERROR: Enter a username or email address.
-${var_lostpwform_notfound_input_error_msg_text}=    ERROR: There is no user registered with that email address.
+${var_lostpwform_notfound_input_error_msg_text}=    ERROR: There is no account with that username or email address.  # ERROR: There is no user registered with that email address.
 
 *** Keywords ***
 lostpwform_input_text_in_email_field
